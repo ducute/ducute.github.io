@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
+  </script>
+
+  <meta name="description" content="WHAT ?  是利用电脑进行三级结构的预测">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算方法预测三级结构">
+<meta property="og:url" content="http://example.com/2021/10/23/%E9%80%9A%E8%BF%87%E8%AE%A1%E7%AE%97%E5%BE%97%E5%87%BA%E8%9B%8B%E7%99%BD%E8%B4%A8%E4%B8%89%E7%BA%A7%E7%BB%93%E6%9E%84/index.html">
+<meta property="og:site_name" content="ducute&#39;s blog">
+<meta property="og:description" content="WHAT ?  是利用电脑进行三级结构的预测">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017100749392.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101041900.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101041900.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101140258.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101304864.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101418572.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101508761.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101612770.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101628626.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101655509.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/du_1602901054.jpg">
+<meta property="article:published_time" content="2021-10-23T14:07:58.125Z">
+<meta property="article:modified_time" content="2020-10-19T04:36:15.079Z">
+<meta property="article:author" content="ducute">
+<meta property="article:tag" content="生物信息学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017100749392.jpg">
+
+<link rel="canonical" href="http://example.com/2021/10/23/%E9%80%9A%E8%BF%87%E8%AE%A1%E7%AE%97%E5%BE%97%E5%87%BA%E8%9B%8B%E7%99%BD%E8%B4%A8%E4%B8%89%E7%BA%A7%E7%BB%93%E6%9E%84/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>计算方法预测三级结构 | ducute's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">ducute's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">可爱即正义</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">7</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/10/23/%E9%80%9A%E8%BF%87%E8%AE%A1%E7%AE%97%E5%BE%97%E5%87%BA%E8%9B%8B%E7%99%BD%E8%B4%A8%E4%B8%89%E7%BA%A7%E7%BB%93%E6%9E%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="ducute">
+      <meta itemprop="description" content="因菜而学,因学而知菜">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ducute's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          计算方法预测三级结构
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-10-23 22:07:58" itemprop="dateCreated datePublished" datetime="2021-10-23T22:07:58+08:00">2021-10-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-10-19 12:36:15" itemprop="dateModified" datetime="2020-10-19T12:36:15+08:00">2020-10-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">生物信息学</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>771</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="WHAT"><a href="#WHAT" class="headerlink" title="WHAT ?"></a>WHAT ?</h1><p>  是利用电脑进行三级结构的预测   <span id="more"></span></p>
+<h1 id="WHY"><a href="#WHY" class="headerlink" title="WHY?"></a>WHY?</h1><h2 id="先介绍下用实验预测的方法有d"><a href="#先介绍下用实验预测的方法有d" class="headerlink" title="先介绍下用实验预测的方法有d"></a>先介绍下用实验预测的方法有d</h2><ol>
+<li>X射线衍射法</li>
+<li>冷冻电子显微镜技术</li>
+<li>核磁共振法</li>
+<li>等 (因为忘了)</li>
+</ol>
+<h2 id="为什么不用这些方法"><a href="#为什么不用这些方法" class="headerlink" title="为什么不用这些方法?"></a>为什么不用这些方法?</h2><ol>
+<li>贵</li>
+<li>技术含量高</li>
+<li>用时长</li>
+</ol>
+<h2 id="为什么用电脑预测"><a href="#为什么用电脑预测" class="headerlink" title="为什么用电脑预测?"></a>为什么用电脑预测?</h2><ol>
+<li>简单一台电脑就能搞定</li>
+<li>预测相识度比较高的结果较为准确</li>
+</ol>
+<h1 id="HOW"><a href="#HOW" class="headerlink" title="HOW?"></a>HOW?</h1><h2 id="同源建模法"><a href="#同源建模法" class="headerlink" title="同源建模法"></a>同源建模法</h2><p> what: 相识的氨基酸序列对应的相应的蛋白质   用已知推未知</p>
+<p>  why:  这样的方法简单啊  相识度在30%以上就可以用此方法, 当然相识度低的不适用</p>
+<p> how:  工作流程图</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017100749392.jpg"></p>
+<p>看起来比较复杂     </p>
+<p>选个简单点: 用现成的<a target="_blank" rel="noopener" href="https://swissmodel.expasy.org/">SWISS-MODEL</a>登入网站输入序列 输入非商业邮箱 ok</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101041900.jpg"></p>
+<p>注: 有些存在特殊情况. 序列高度一致的情况下,出现结构不相同</p>
+<h2 id="穿线法"><a href="#穿线法" class="headerlink" title="穿线法"></a>穿线法</h2><p>WHAT:  蛋白质的拓扑结构是确定的1393个, 2008到2015年没发生过变化, 用待测蛋白质序列过过这些已知的拓扑结构,能量较低的极可能是待测蛋白质的三级结构</p>
+<p>HOW:  待测蛋白质序列穿过这些已知的拓扑结构</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101041900.jpg"></p>
+<p>不用担心还是在线网站的<a target="_blank" rel="noopener" href="https://zhanglab.ccmb.med.umich.edu/I-TASSER/">I-TASSER</a>注册-&gt;输入序列–&gt;点击run I-TASSER 只需等待即可  </p>
+<p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101140258.jpg"></p>
+<h2 id="从头计算法"><a href="#从头计算法" class="headerlink" title="从头计算法"></a>从头计算法</h2><p>how: 蛋白质三维结构—&gt;蛋白质序列–&gt;最低自由能</p>
+<p>理论上来说: 稳定的蛋白质三维结构的自由能是最低的,   那么反过来 通/过序列去找最低的自由能的空间结构 就是待测序列的三维结构</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101304864.jpg"></p>
+<h2 id="综合法"><a href="#综合法" class="headerlink" title="综合法"></a>综合法</h2><p> what: 同源+  穿线法+ 从头计算法</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101418572.jpg"></p>
+<p> 这个就不多介绍了</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101508761.jpg"></p>
+<h1 id="模型质量评估"><a href="#模型质量评估" class="headerlink" title="模型质量评估"></a>模型质量评估</h1><p>通过 计算方法获得的模型,必须通过模型质量评估,以确定模型的准确性.</p>
+<p>需要三个平台测定类似才能确定模型的的可靠性.</p>
+<p>通常可以去<a target="_blank" rel="noopener" href="https://servicesn.mbi.ucla.edu/SAVES/">SAVEAS</a>常用的有</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101612770.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101628626.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101655509.jpg"></p>
+<h1 id="结构比对"><a href="#结构比对" class="headerlink" title="结构比对:"></a>结构比对:</h1><p> WHAT:<br>    对蛋白质三维结构的相似性进行比较</p>
+<p>why? </p>
+<ol>
+<li>可以用与探索蛋白质进化及其同源关系</li>
+<li>改进序列比对的精度</li>
+<li>改进蛋白质结构测序工具</li>
+<li>为蛋白质提供分类依据</li>
+<li>帮助了解蛋白质功能</li>
+</ol>
+<p>how? </p>
+<p>呐, 挺简单的看到这个网站没–&gt;<a target="_blank" rel="noopener" href="http://superpose.wishartlab.com/">suuperpose</a> 点进去  然后把两条序列输入进去就OK了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/du_1602901054.jpg"></p>
+
+    </div>
+
+    
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+            ------------- 本文结束 <i class="fa fa-heart-o"></i> 感谢您的阅读-------------
+    	</div>
+    
+</div
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/" rel="tag"># 生物信息学</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/10/23/%E5%90%8D%E8%AF%8D/" rel="prev" title="名词语法">
+      <i class="fa fa-chevron-left"></i> 名词语法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/10/23/%E5%BA%8F%E5%88%97%E7%9B%B8%E4%BC%BC%E6%AF%94%E5%AF%B9/" rel="next" title="多序列比对">
+      多序列比对 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#WHAT"><span class="nav-number">1.</span> <span class="nav-text">WHAT ?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WHY"><span class="nav-number">2.</span> <span class="nav-text">WHY?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%88%E4%BB%8B%E7%BB%8D%E4%B8%8B%E7%94%A8%E5%AE%9E%E9%AA%8C%E9%A2%84%E6%B5%8B%E7%9A%84%E6%96%B9%E6%B3%95%E6%9C%89d"><span class="nav-number">2.1.</span> <span class="nav-text">先介绍下用实验预测的方法有d</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E7%94%A8%E8%BF%99%E4%BA%9B%E6%96%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">为什么不用这些方法?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8%E7%94%B5%E8%84%91%E9%A2%84%E6%B5%8B"><span class="nav-number">2.3.</span> <span class="nav-text">为什么用电脑预测?</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HOW"><span class="nav-number">3.</span> <span class="nav-text">HOW?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%8C%E6%BA%90%E5%BB%BA%E6%A8%A1%E6%B3%95"><span class="nav-number">3.1.</span> <span class="nav-text">同源建模法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A9%BF%E7%BA%BF%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">穿线法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8E%E5%A4%B4%E8%AE%A1%E7%AE%97%E6%B3%95"><span class="nav-number">3.3.</span> <span class="nav-text">从头计算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%BC%E5%90%88%E6%B3%95"><span class="nav-number">3.4.</span> <span class="nav-text">综合法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">3.5.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%B4%A8%E9%87%8F%E8%AF%84%E4%BC%B0"><span class="nav-number">4.</span> <span class="nav-text">模型质量评估</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BB%93%E6%9E%84%E6%AF%94%E5%AF%B9"><span class="nav-number">5.</span> <span class="nav-text">结构比对:</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ducute"
+      src="/images/touxiang.png">
+  <p class="site-author-name" itemprop="name">ducute</p>
+  <div class="site-description" itemprop="description">因菜而学,因学而知菜</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/ducute" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;ducute" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:ducute119@gmail.com" title="E-Mail → mailto:ducute119@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ducute</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">5k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">5 分钟</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

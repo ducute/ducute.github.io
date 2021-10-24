@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>有趣的小网站</title>
+      <link href="/2021/10/23/%E6%9C%89%E8%B6%A3%E7%9A%84%E5%B0%8F%E7%BD%91%E7%AB%99/"/>
+      <url>/2021/10/23/%E6%9C%89%E8%B6%A3%E7%9A%84%E5%B0%8F%E7%BD%91%E7%AB%99/</url>
+      
+        <content type="html"><![CDATA[<h1 id="git"><a href="#git" class="headerlink" title="git"></a>git</h1><ol><li><p><a href="https://book.git-scm.com/">git网址</a></p></li><li><p>推荐这个简易版的<a href="https://www.bootcss.com/p/git-guide/">git_</a></p></li></ol><h1 id="学语言-交流的"><a href="#学语言-交流的" class="headerlink" title="学语言(交流的)"></a>学语言(交流的)</h1><ol><li>小玩具叭 <a href="http://www.duolingo.cn/learn">多领国</a></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随手记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>多序列比对</title>
+      <link href="/2021/10/23/%E5%BA%8F%E5%88%97%E7%9B%B8%E4%BC%BC%E6%AF%94%E5%AF%B9/"/>
+      <url>/2021/10/23/%E5%BA%8F%E5%88%97%E7%9B%B8%E4%BC%BC%E6%AF%94%E5%AF%B9/</url>
+      
+        <content type="html"><![CDATA[<p>序列的相似度</p><blockquote><p> 具有相识的序列就可能具有 相似的结构——&gt; 相似的功能</p></blockquote><p><font color="red">一致度&nbsp;</font>： （相同/总数）*  100% </p><p><font color="red">相识度</font> :   [(相同+ 相似 )  /  总数] *  100% </p><h2 id="替换矩阵"><a href="#替换矩阵" class="headerlink" title="替换矩阵:"></a>替换矩阵:</h2><h3 id="DNA替换矩阵"><a href="#DNA替换矩阵" class="headerlink" title="DNA替换矩阵"></a>DNA替换矩阵<span id="more"></span></h3><ol><li><p>等价矩阵：　相同为１　　不同为０</p></li><li><p>转换－颠换矩阵：　一个环：　Ｃ／Ｔ　两个环：　A／Ｇ　相同为１　　不相同为－５　　　</p></li><li><p>Blast矩阵：　字母相同为５　　不相同为－４　　　</p><p>１.　＞为什么是５／－４　因为经验</p></li></ol><h3 id="蛋白质替换矩阵"><a href="#蛋白质替换矩阵" class="headerlink" title="蛋白质替换矩阵:"></a>蛋白质替换矩阵:</h3><ol><li><p>等价矩阵</p><blockquote><p>一样  相同蛋白质为1  不同为0</p></blockquote></li><li><p>PAM矩阵</p><blockquote><p><font color="red">最常用</font> pam-1 是根据100个氨基酸突变平均发生<font color="bule">1个</font> 的量值</p><p>及 相似度为99%  的用  pam-1  呈现负相关</p></blockquote></li><li><p>BLOSUM矩阵</p><blockquote><p><font color="red"> BLOSUM 62 最为常用</font> </p><p>跟 pam矩阵 反着过来 跟 相识度呈现正相关</p></blockquote></li></ol><p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201007101531728.png" alt="image-20201007101531728"></p><h2 id="序列比较"><a href="#序列比较" class="headerlink" title="序列比较"></a>序列比较</h2><h3 id="打点比对"><a href="#打点比对" class="headerlink" title="打点比对"></a>打点比对</h3><ol><li><p>两条序列比对</p><blockquote><p>将一条序列横向排列 , 另一条纵向排列  &lt;也可以是相同的序列&gt;</p><p>当 遇到<font color="red"> 相同时 记一个标记</font></p></blockquote></li><li><p>一些打点法网址:<br><a href="http://myhits.isb-sib.ch/cgi-bin/dotlet">Dotlet</a></p><p><a href="http://arbl.cvmbs.colostate.edu/molkit/dnadot">Dnadot</a></p><p><a href="http://sonnhammer.sbc.su.se/Dotter.html">Dotter</a></p><p><a href="http://emboss.sourceforge.net/">Dottup</a></p></li></ol><h3 id="序列比对法"><a href="#序列比对法" class="headerlink" title="序列比对法"></a>序列比对法</h3><ol><li>需要替换<a href="#%E6%9B%BF%E6%8D%A2%E7%9F%A9%E9%98%B5">矩阵</a>+ 算法</li></ol><h4 id="全局比对算法"><a href="#全局比对算法" class="headerlink" title="全局比对算法"></a>全局比对算法</h4><p>$$<br>\begin{cases}s(0,0) = 0   \<br>s(0,j) = gap * j  \<br>s(i,0) =  gap * i \<br>s_{max}(i,j)= \begin{cases}<br>s(i-1,j-1)+w(i,j)\<br>s(i-1,j) +gap \<br>s(i,j-1) +gap<br>\end{cases}<br>\end{cases}<br>$$</p><blockquote><p> w( i,j) 是替换矩阵对应的值</p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201007112334652.png"></p><blockquote><p><font color="red"> 如果箭头☞的是字母 则对应所指方向的为空如果是斜着 就两个保持不变</font>  </p></blockquote><p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201007111257092.png"></p><h4 id="局部比对算法"><a href="#局部比对算法" class="headerlink" title="局部比对算法"></a>局部比对算法</h4><p>$$<br>s(0,0) = 0 \<br>s(0,j) = 0 \\<br>s(i,0) = 0\\\<br>s(i,j) = max\begin{cases}<br>0\<br>s(i-1,j-1) + w(i,j)\<br>s(i-1,j) +gap\<br>s(i,j-1) +gap\<br>\end{cases}<br>$$</p><p><strong>局部比对要找最高分得指向零的那条线</strong></p><hr><p>比对的网址:</p><p><a href="http://www.ebi.ac.uk/Tools/psa">embl-ebl</a></p><h2 id="BLAST搜索"><a href="#BLAST搜索" class="headerlink" title="BLAST搜索"></a>BLAST搜索</h2><p>作用: 主要就是在大量数据库里  搜索出<font color="red"> 相识的序列</font></p><p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201007143012591.png"></p><ol><li>blast<br>找出序列相同的子序列,他们的长度相同,且能形成无空位的序列</li><li>psi-blast (迭代):上blast的基础上进行搜索</li></ol><p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201007143248956.png"></p><ol start="3"><li><p>phi-blast (模式识别模式)</p></li><li><p>一些经行blast比对的在线网址:</p><ol><li><a href="http://www.ncbi.nlm.nih.gov/BLAST">USA-NCBI</a></li><li><a href="http://web.expasy.org/blast">Europe-ExPASY</a></li><li><a href="http://www.uniprot.org/blast/">Europe-Uniprot</a></li><li><a href="http://blast.ddbj.nig.ac.jp/">Japan-DDBJ</a></li></ol></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生物信息学 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>计算方法预测三级结构</title>
+      <link href="/2021/10/23/%E9%80%9A%E8%BF%87%E8%AE%A1%E7%AE%97%E5%BE%97%E5%87%BA%E8%9B%8B%E7%99%BD%E8%B4%A8%E4%B8%89%E7%BA%A7%E7%BB%93%E6%9E%84/"/>
+      <url>/2021/10/23/%E9%80%9A%E8%BF%87%E8%AE%A1%E7%AE%97%E5%BE%97%E5%87%BA%E8%9B%8B%E7%99%BD%E8%B4%A8%E4%B8%89%E7%BA%A7%E7%BB%93%E6%9E%84/</url>
+      
+        <content type="html"><![CDATA[<h1 id="WHAT"><a href="#WHAT" class="headerlink" title="WHAT ?"></a>WHAT ?</h1><p>  是利用电脑进行三级结构的预测   <span id="more"></span></p><h1 id="WHY"><a href="#WHY" class="headerlink" title="WHY?"></a>WHY?</h1><h2 id="先介绍下用实验预测的方法有d"><a href="#先介绍下用实验预测的方法有d" class="headerlink" title="先介绍下用实验预测的方法有d"></a>先介绍下用实验预测的方法有d</h2><ol><li>X射线衍射法</li><li>冷冻电子显微镜技术</li><li>核磁共振法</li><li>等 (因为忘了)</li></ol><h2 id="为什么不用这些方法"><a href="#为什么不用这些方法" class="headerlink" title="为什么不用这些方法?"></a>为什么不用这些方法?</h2><ol><li>贵</li><li>技术含量高</li><li>用时长</li></ol><h2 id="为什么用电脑预测"><a href="#为什么用电脑预测" class="headerlink" title="为什么用电脑预测?"></a>为什么用电脑预测?</h2><ol><li>简单一台电脑就能搞定</li><li>预测相识度比较高的结果较为准确</li></ol><h1 id="HOW"><a href="#HOW" class="headerlink" title="HOW?"></a>HOW?</h1><h2 id="同源建模法"><a href="#同源建模法" class="headerlink" title="同源建模法"></a>同源建模法</h2><p> what: 相识的氨基酸序列对应的相应的蛋白质   用已知推未知</p><p>  why:  这样的方法简单啊  相识度在30%以上就可以用此方法, 当然相识度低的不适用</p><p> how:  工作流程图</p><p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017100749392.jpg"></p><p>看起来比较复杂     </p><p>选个简单点: 用现成的<a href="https://swissmodel.expasy.org/">SWISS-MODEL</a>登入网站输入序列 输入非商业邮箱 ok</p><p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101041900.jpg"></p><p>注: 有些存在特殊情况. 序列高度一致的情况下,出现结构不相同</p><h2 id="穿线法"><a href="#穿线法" class="headerlink" title="穿线法"></a>穿线法</h2><p>WHAT:  蛋白质的拓扑结构是确定的1393个, 2008到2015年没发生过变化, 用待测蛋白质序列过过这些已知的拓扑结构,能量较低的极可能是待测蛋白质的三级结构</p><p>HOW:  待测蛋白质序列穿过这些已知的拓扑结构</p><p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101041900.jpg"></p><p>不用担心还是在线网站的<a href="https://zhanglab.ccmb.med.umich.edu/I-TASSER/">I-TASSER</a>注册-&gt;输入序列–&gt;点击run I-TASSER 只需等待即可  </p><p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101140258.jpg"></p><h2 id="从头计算法"><a href="#从头计算法" class="headerlink" title="从头计算法"></a>从头计算法</h2><p>how: 蛋白质三维结构—&gt;蛋白质序列–&gt;最低自由能</p><p>理论上来说: 稳定的蛋白质三维结构的自由能是最低的,   那么反过来 通/过序列去找最低的自由能的空间结构 就是待测序列的三维结构</p><p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101304864.jpg"></p><h2 id="综合法"><a href="#综合法" class="headerlink" title="综合法"></a>综合法</h2><p> what: 同源+  穿线法+ 从头计算法</p><p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101418572.jpg"></p><p> 这个就不多介绍了</p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101508761.jpg"></p><h1 id="模型质量评估"><a href="#模型质量评估" class="headerlink" title="模型质量评估"></a>模型质量评估</h1><p>通过 计算方法获得的模型,必须通过模型质量评估,以确定模型的准确性.</p><p>需要三个平台测定类似才能确定模型的的可靠性.</p><p>通常可以去<a href="https://servicesn.mbi.ucla.edu/SAVES/">SAVEAS</a>常用的有</p><p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101612770.jpg"></p><p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101628626.jpg"></p><p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201017101655509.jpg"></p><h1 id="结构比对"><a href="#结构比对" class="headerlink" title="结构比对:"></a>结构比对:</h1><p> WHAT:<br>    对蛋白质三维结构的相似性进行比较</p><p>why? </p><ol><li>可以用与探索蛋白质进化及其同源关系</li><li>改进序列比对的精度</li><li>改进蛋白质结构测序工具</li><li>为蛋白质提供分类依据</li><li>帮助了解蛋白质功能</li></ol><p>how? </p><p>呐, 挺简单的看到这个网站没–&gt;<a href="http://superpose.wishartlab.com/">suuperpose</a> 点进去  然后把两条序列输入进去就OK了</p><p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/du_1602901054.jpg"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生物信息学 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 生物信息学 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>名词语法</title>
+      <link href="/2021/10/23/%E5%90%8D%E8%AF%8D/"/>
+      <url>/2021/10/23/%E5%90%8D%E8%AF%8D/</url>
+      
+        <content type="html"><![CDATA[<h1 id="名词的语法"><a href="#名词的语法" class="headerlink" title="名词的语法"></a>名词的语法</h1><h2 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类<span id="more"></span></h2><ul><li>专有名词&amp; 普通名词</li><li>可数名词&amp;不可数名词</li><li>具体名词&amp;抽象名词</li><li>复数形式出现的名词</li></ul><h2 id="单复数"><a href="#单复数" class="headerlink" title="单复数"></a>单复数</h2><h2 id="所有格"><a href="#所有格" class="headerlink" title="所有格"></a>所有格</h2><p>① of</p><p>② ‘s</p><p>③ 双重所有格</p><h2 id="主谓一致"><a href="#主谓一致" class="headerlink" title="主谓一致"></a>主谓一致</h2><p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201030213139745.jpg"></p><h3 id="集体名词做主语"><a href="#集体名词做主语" class="headerlink" title="集体名词做主语"></a>集体名词做主语</h3><ul><li>表<font color="red">整体概念</font>,谓语动词用<font color="red">单数</font></li><li>表个体概念, 谓语动词用复数. </li></ul><blockquote><p>the whole  family <strong>is</strong> active    </p><p>the family <strong>have</strong> met their various</p></blockquote><h3 id="单复数同形名词做主语"><a href="#单复数同形名词做主语" class="headerlink" title="单复数同形名词做主语:"></a>单复数同形名词做主语:</h3><ul><li>根据句意,判断谓语动词的<font color="red">单复数</font></li></ul><blockquote><p>we need to find some other means of <strong>transportation</strong></p><p>我们的找其他的交通工具了</p></blockquote><h3 id="专有名词作为整体对待-谓语动词用单数"><a href="#专有名词作为整体对待-谓语动词用单数" class="headerlink" title="专有名词作为整体对待,谓语动词用单数"></a>专有名词作为整体对待,谓语动词用<font color="red">单数</font></h3><blockquote><p>The United Nations <strong>has</strong>  passed a resolution to lift sanctions against lraq.</p><p>联合国通过了解除对伊朗裁决的决定</p></blockquote><h3 id="由-and-或-both-—-and—-连接两个单数名词做主语时代指复数的概念-谓语动词用复数"><a href="#由-and-或-both-—-and—-连接两个单数名词做主语时代指复数的概念-谓语动词用复数" class="headerlink" title="由 and 或 both — and— 连接两个单数名词做主语时代指复数的概念,谓语动词用复数"></a>由 and 或 both — and— 连接两个单数名词做主语时代指复数的概念,谓语动词用<font color="red">复数</font></h3><blockquote><p>She and her friends <strong>are</strong> at the fair</p><p>她和她的朋友在会上</p></blockquote><h3 id="and-连接的两个词指同一个人、同一件事…-两个名词用一个冠词，谓语动词用单数"><a href="#and-连接的两个词指同一个人、同一件事…-两个名词用一个冠词，谓语动词用单数" class="headerlink" title="and 连接的两个词指同一个人、同一件事…..,两个名词用一个冠词，谓语动词用单数"></a>and 连接的两个词指同一个人、同一件事…..,两个名词用一个冠词，谓语动词用<font color="red">单数</font></h3><blockquote><p>the <u><em>teacher</em></u> <strong>and</strong> <em><u>writer</u></em> <strong>is</strong> her friend</p><p>这位教师兼作家是她的朋友</p></blockquote><h3 id="and-连接单数前如有every，each-，no-，many-a-修饰时-谓语动词用单数"><a href="#and-连接单数前如有every，each-，no-，many-a-修饰时-谓语动词用单数" class="headerlink" title="and 连接单数前如有every，each ，no ，many a 修饰时 谓语动词用单数"></a>and 连接单数前如有every，each ，no ，many a 修饰时 谓语动词用<font color="red">单数</font></h3><blockquote><p>No smoking or drinking is allowed. Every man and woman <strong>is</strong> required to check in.</p><p>不许抽烟、饮酒。 按要求，每位男性及女性需要登记。</p></blockquote><h3 id="时间、距离、金钱，价格等常作为整体看待时，-谓语动词用单数形式"><a href="#时间、距离、金钱，价格等常作为整体看待时，-谓语动词用单数形式" class="headerlink" title="时间、距离、金钱，价格等常作为整体看待时， 谓语动词用单数形式"></a>时间、距离、金钱，价格等常作为整体看待时， <strong>谓语动词用<font color="red">单数</font>形式</strong></h3><blockquote><p>Five dollars is  a lot of money. </p><p>五美元是很多钱。</p><p>Fifteen miles is not a long way.</p><p>十五英里不是很远。</p></blockquote><h3 id="就近原则"><a href="#就近原则" class="headerlink" title=" 就近原则"></a><font color="red"> 就近原则</font></h3><ul><li><h4 id="there-here-be-句型"><a href="#there-here-be-句型" class="headerlink" title="there/here be 句型"></a>there/here be 句型</h4></li></ul><blockquote><p>there are **many ** possible candidates.</p><p>候选人有很多可能.</p></blockquote><ul><li><h4 id="or-either—or—–-两个其中一个-neither—nor—-两个都不-not-only—-but-also"><a href="#or-either—or—–-两个其中一个-neither—nor—-两个都不-not-only—-but-also" class="headerlink" title="or, either—or—–(两个其中一个), neither—nor—-(两个都不), not only—-but(also)"></a>or, either—or—–(<strong>两个其中一个</strong>), neither—nor—-(<strong>两个都不</strong>), not only—-but(also)</h4></li></ul><blockquote><p>  Either Grandpa or my sisters <font color="red">are</font> going to the park</p><p>不是爷爷就是我妹妹要去公园</p></blockquote><h3 id="就远原则"><a href="#就远原则" class="headerlink" title="就远原则"></a>就远原则</h3><ul><li>as well as   // 也；和…一样；不但…而且</li><li>together/along/combined with     和；连同/沿（顺）着；连同……一起；与……一道；除了……/化合，联合；连同</li><li>rather than    //而不是；宁可…也不愿</li><li>except、besides、including   //除……之外 //况且，再说；此外，以及//包括</li><li>in addition to  // 除了</li><li>apart from //除…之外；且不说；并且</li></ul><blockquote><p> the <strong><font color="blue">politician</font></strong>, along with the newsmen, <font color="red"><strong>is</strong></font> on the meeting</p><p>一位警察和新闻记者们一起参加了会议</p><p><font color="blue">Excitement</font>, as well as nervousness, <font color="red">is</font> the cause of her shaking.</p><p>兴奋和紧张是她发抖的原因。</p></blockquote><h3 id="分数、百分数-of＋-名词短语-谓语动词常于of-后面的名词保持一致"><a href="#分数、百分数-of＋-名词短语-谓语动词常于of-后面的名词保持一致" class="headerlink" title="分数、百分数 +ｏｆ＋　名词短语,谓语动词常于of 后面的名词保持一致"></a>分数、百分数 +ｏｆ＋　名词短语,谓语动词常于of 后面的名词保持一致</h3><ul><li>some of /plenty of / a lot of / lots of /most of / the rest of / all of </li><li>half  of / part of </li></ul><blockquote><p>All of the chicken <font color="red">is</font> gone </p><p>所有的鸡都没了</p></blockquote><h3 id="在四则运算中-谓语动词多用单数"><a href="#在四则运算中-谓语动词多用单数" class="headerlink" title="在四则运算中, 谓语动词多用单数"></a>在四则运算中, 谓语动词多用<font color="red">单数</font></h3><blockquote><p>18 minus 12 is 6 </p></blockquote><p><strong>a number of + 可数名词复数   谓语动词用复数</strong></p><p><strong>the number of + 可数名词   谓语动词用单数</strong></p><blockquote><p>the number of students in the class <font color="blue"><strong>is</strong> </font>fifteen </p><p>A number of students <font color="blue"><strong>were</strong> </font>late for class </p></blockquote><h3 id="“each-one-no-one-some-any-no-every-body-one-或thing-”-作为语或者限定词-谓语动词用单数"><a href="#“each-one-no-one-some-any-no-every-body-one-或thing-”-作为语或者限定词-谓语动词用单数" class="headerlink" title="“each, one, no one , some(any , no ,every )+body(one 或thing)” 作为语或者限定词,谓语动词用单数"></a>“each, one, no one , some(any , no ,every )+body(one 或thing)” 作为语或者限定词,谓语动词用<font color="red">单数</font></h3><blockquote><p> Each <font color="blue">gets</font> a trophy for playing </p><p>Somebody will pay for this.</p></blockquote><h3 id="“one-and-a-half-复数”作主语-动词用单数-3-2-lt-2"><a href="#“one-and-a-half-复数”作主语-动词用单数-3-2-lt-2" class="headerlink" title="“one and a half + 复数”作主语,动词用单数//3/2 < 2"></a>“one and a half + 复数”作主语,动词用<font color="red">单数</font>//3/2 &lt; 2</h3><blockquote><p>one and a half apples <font color="blue">is</font> left on the table</p></blockquote><h3 id="“a-an-单数名词-or-two”作主-谓语用单数、“one-or-two-复数名词”为主，谓用复"><a href="#“a-an-单数名词-or-two”作主-谓语用单数、“one-or-two-复数名词”为主，谓用复" class="headerlink" title="“a / an + 单数名词 + or two”作主,谓语用单数、“one or two + 复数名词”为主，谓用复"></a>“a / an + 单数名词 + or two”作主,谓语用<font color="red">单数</font>、“one or two + 复数名词”为主，谓用<font color="red">复</font></h3><blockquote><p>a  student or two <font color="red">has</font> failed exam </p><p>one or two suggestions <font color="blue">were</font> recommended.</p></blockquote><h3 id="many-a-…-或者-more-than-one-–为主，谓语用单数"><a href="#many-a-…-或者-more-than-one-–为主，谓语用单数" class="headerlink" title="many a …..  或者 more than one –为主，谓语用单数"></a>many a …..  或者 more than one –为主，谓语用<font color="red">单数</font></h3><blockquote><p><font color="red">many a </font>man thinks life <font color="red">is</font> meaningless without purpose</p><p>more than one student <font color="red">has</font> tried this</p></blockquote><h3 id="“one-of-名词结构”-谓语动词用单数"><a href="#“one-of-名词结构”-谓语动词用单数" class="headerlink" title="“one of + 名词结构” 谓语动词用单数"></a>“one of + 名词结构” 谓语动词用单数</h3><blockquote><p><font color="red">one of </font>the student is our class <font color="red">is</font> from the UK</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 英语语法 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 名词 </tag>
+            
+            <tag> 英语 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>蛋白质相关操作</title>
+      <link href="/2021/10/23/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/"/>
+      <url>/2021/10/23/%E8%9B%8B%E7%99%BD%E8%B4%A8%E7%9B%B8%E5%85%B3%E6%93%8D%E4%BD%9C/</url>
+      
+        <content type="html"><![CDATA[<h1 id="蛋白质二级结构"><a href="#蛋白质二级结构" class="headerlink" title="蛋白质二级结构"></a>蛋白质二级结构</h1><h2 id="先看懂"><a href="#先看懂" class="headerlink" title="先看懂:"></a><font color="YELLOW">先看懂</font>:</h2><p>​    <strong>结构对应图</strong></p><table><thead><tr><th>T</th><th align="center">E</th><th>G</th><th align="center">empty</th><th align="center">H</th></tr></thead><tbody><tr><td>turn</td><td align="center">beta strand</td><td>3/10- hellx</td><td align="center">ono secondary structure</td><td align="center">alpha hexllx</td></tr><tr><td>β转角</td><td align="center">β折片</td><td>螺旋结构</td><td align="center">没有结构</td><td align="center">α螺旋</td></tr></tbody></table><h2 id="知道怎么做"><a href="#知道怎么做" class="headerlink" title="知道怎么做"></a><font color="blue">知道怎么做</font><span id="more"></span></h2><h2 id="已知蛋白质二级序列"><a href="#已知蛋白质二级序列" class="headerlink" title="已知蛋白质二级序列"></a>已知蛋白质二级序列</h2><ul><li><p>登入<a href="https://www.rcsb.org/">PDB</a></p></li><li><p>选择你的蛋白质序列ID </p></li><li><p>选择 sequence   </p></li><li><p>点击 view sequence &amp; DSSP image   // 这个没有了</p></li><li><p><a href="https://swift.cmbi.umcn.nl/gv/dssp/">DSSP</a> 这个网站下有可以搜索已知序列  web sever</p></li></ul><h3 id="未知蛋白质的二级序列"><a href="#未知蛋白质的二级序列" class="headerlink" title="未知蛋白质的二级序列"></a>未知蛋白质的二级序列</h3><ul><li> <a href="http://bioinf.cs.ucl.ac.uk/psipred">PSIPRED</a></li><li> <a href="http://www.compbio.dundee.ac.uk/www-jpred/">Jpred3</a> </li><li><a href="http://www.predictprotein.org/">PREDICTPROTEIN</a></li><li><a href="http://scratch.proteomics.ics.uci.edu/">SSpro</a></li><li><a href="http://zhanglab.ccmb.med.umich.edu/PSSpred/">PSSpred</a></li><li> <a href="http://mobyle.pasteur.fr/cgi-bin/portal.py#forms:predator">PREDATOR</a></li></ul><ol><li> 选择上面的任意一个网站  </li><li>输入序列或上传序列文件</li><li>等待得到对应的文件</li></ol><hr><h1 id="蛋白质三级结构"><a href="#蛋白质三级结构" class="headerlink" title="蛋白质三级结构"></a>蛋白质三级结构</h1><ul><li><p>获取数据还是得去<a href="https://www.rcsb.org/">PDB</a></p></li><li><p><strong>输入关键词</strong>或者用<font color="red">高级检索输入序列找相似序列</font></p></li><li><p>关于高级检索可以看看blast 检索</p></li><li><p>制作可视化蛋白质模型软件</p><ul><li> <a href="https://www.ks.uiuc.edu/Research/vmd/">VMD</a>   (重点是免费)</li><li>Maestro  </li><li><a href="https://pymol.org/2/">Pymol</a>    (专业  土豪随意)</li></ul></li></ul><hr><h1 id="VMD使用记录"><a href="#VMD使用记录" class="headerlink" title="VMD使用记录"></a>VMD使用记录</h1><ul><li>导入pdb文件.</li><li>就会显示出蛋白质的三级结构</li><li>Graphics -&gt; REpresentations 可以修改3D模型的样式</li><li>Graphics -&gt;Colors  里可以修改颜色</li><li>Graphics-&gt; Labels 修改标签样式</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 生物信息学 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>随手记.md</title>
+      <link href="/2021/10/23/21-10-23/"/>
+      <url>/2021/10/23/21-10-23/</url>
+      
+        <content type="html"><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">  <script id="hbeData" type="hbeData" data-hmacdigest="1948d701f8565b23819aee6944dcca08ef72c22d9fafd11babbc881d17098ecd">288a67ede137d3e4e7bb898a2795abed648874c9682367579af0bff6620af1d4d05457e5d089497fb2972325bda13ad944fb8735a26e5d7d8ef505e4679b5c9d86c658cf22f5d783723260fe1b409a8c18ba221bfd7fc99b8a46024159d8c403bd0440953a05c58131a34ab645c1a99872adf9a0362c6263cf14b7a33e2548c4a53afe7b16a8fc6f06c8b2f37596a9a623597cab30d18bb6cb4439f404c3b93915ba4cf919e4ae9d7e6ecfdf1fbe95c36fec5b2ea11aac54295bbeb4ca2370be5c2d877d6b91ee53b60ff08bdfa86eb9b3fee1082db7e9ac536e182954338a9e39758052a798763a940cc00fa0f8299a578bf8c6ef59c5a37f027abe0ac85bdf1f3422f14e6fe5804db78e1391fb543da5eb1d3b5f7d37336b7910a69373dea9fcfa4fb3073a38f07ff97ca7794354c38d81b0b9edee22d43f5c051fc7415d0084f3bad5e442161246f8889e96cd4f730cf91609a80dc045b3621067c4d90a46ad3d1abdc00d12d7654b2941db9057112729ac4d92275cacd5adf23f1687c9790cc6d7ee6982177ad075dee5f037adb6740e17ee7db801f3bb5b8ca85b4d237d7b007808dec72f357b22f56722feed47b835790cd838ce5c17be87386003ee9dfdebdc9af214d9eaa6ca1ea370a98b33c9f9d895d425283641ac632ab9fea08b2995c39091df29edf04a6549b5280417da7944de723cd67e9e5780e3aa5485bda076136e1bf5d352e0d41e45cc1d58938ab5d7156cd942202c1fb780cbf02d15887f088aaa2467f474efd2841f99f4441447121351ee472b47ea7a653f25ee7d2af62936bb4ed788f504a86a24803afa229e43f56e93e5dd0aa5c917f49220e427cf0699f3d77d05a1e9c39a6fc97ff5cd287db92f0f442495f42efe0f0f84b97401251232ace3a04e54f35ddf9f4fcfc4bc52faba0b339f1aa3c7d4b38ddcaa6e52aed250cb7d9f2f7b8c3e3233294f6d7b2787bbf0639746a012073ce71c35749c6f2499dca0e7465831cc42cfbd8bb8e09f3894eec19b0ce3f737b6ca811a138de2f3993358d9fb0cbdff62bcf5af733df6f137209c5ae54433727fcef42083e0323d2f87272096bdd6868e0818ce821f934d87ae950b38121228842edc0b9aeca78f5bc5bdc1e5482d2c5f7e82ee40b9ebb47e28765ca4a8354e0b01b1bb77ee797e9e492ed101b4376b34538c1f751d2f702518cc27cbb843234a32edd8a88ca7fcfc63831dece25666eaa048d50bea1052572a7d5b52c6bbeafcb2bf6d6591ef4b5ba06b4d5111f8b164d1ded150e1785e1b1ec2be99eb2546969b445f17db3208a268f3155a51c7c5505173ba24256db9793dc57f0dd968d85bd9bf3894575cdb23035a775c52873cb5c315fdd6acdd16665fc57d880e75ed8d9b5b21cdc8730bec227abd63b930c4c2d2e8527072f7a082ab583fd231bf9a836860a9b983d213c3a8c219acf116491526d783be5c62c565bfed566cdab09ccfef1d433e861c0a3b2f3f2303fd27996e53d06f917e5bf0aa8b3adc46150a85370e6bfde3777dec2fefb287e217657613c882664d66d509b95238b5bdbbf9ea7094dc8180f3e27d96eac87390de7eec66ec134abc37a160c267d01c0b5ca574c6dfd3fef074fe88bcc3cb2a75bbf018d30d07c11b482e167dd46f811cf4a4794584fe305e1c94a403645c46cc0b142f534ed88f83eede69245ad987fb04372d5ec9fd1790d1b4d56cfb07ce4a795d5c49caba43b0c7e25cb1e77d25ca890888036b30125e7f683b10466792d792f01c0926caa88398fb8e72de02c3efff6ec14bf39c21a634c67885454d35e4f09f5e2837ddd205b7c46723a5f81c58426629a5fcebe56492268af51fbc2dda066c5ef8dec5930a8bd0be92bc656df0dc1594a7b6718b47af5d3e4e267748522d8e3e4d37b06c2c76013fbdb3b53abcad4f7990e8372b1a2888a5c2534b370f23c46c0d8f23e4673b09e756dcd4a9a668bd595a45ae4f8c700edfae296c018b88079f7701686f4979d97c37a26d4cbaad1be76bb160dddd7af47d5ed97ebaac3612dc08f5e8bd9c969a03cddb8e1be15d4b7f806edfa567cec767abce2d1a13a011b9720f30484235d628afe021eb5f352f0f75bd58341666b74a1b93f9bb0ab06206c4ca88d1ac5219120998a82e2618fc1b2f4f080c966d62f770653005f7cce2c681960cea5fd77ba39efa7d1f38fc462b196ac253d57f53e74d646b11e2e64f43b9c6b681d4aa615cb9d2742852150ae06c0e058a6d0246e1752695a42ccc2ee201ebb823b92fcdbae8492cbfefbe6b9a835ca19e1857497cde0d30c3ead3a47a52e5faea8ed0f26006e5ca21fa955f66760f4914b9e20b07a9d9f12ecedfc16bd3d765025fb3bc3e1075c697fa998bfbc2fd8d620c6dc37ed82eafc67d589ab5a2f787691b858b3ada69bd4a696aec0ba4bbe812e99f9baf9b48807299346762e68cedc396b6375d185f8fdcac10e090521e5383957c7622bb983b56723b82f97d6edde57bf3ace97fd532a52a30bdd4709d144d654d738c1527509a04222bdfeef61167f26aff8cbc37f87303a7c9136102ef67ff9198a281c24edbfd29f33ba32e39e88545ee09e62c69c93c10d6d163c8438324363c911618aef95f0b07c899ac83c2160a54d15b87ce9b2074bff7d19a1179594b7a3e58cef28b4e94dbdbaad67d158abf5757b961acf950f48b591e706c3f8608017ff696d62d4544c916d336fc63bb279960b9397cc6099e6955696bdad11758e4811f0d0ece236098d3a54bf06b25dfbf651ce03c4df763bbc661a27d0de024bc952f2ef98d16913487069fac6c5932ebffdece67670e21d8be356a1d2e54e6c855ab319270ffea58d394e7679fba16797baa881f81ec7e939f710c8ed8231441bce07f5bd498beac76a3916fd5b3bad7d4eb6e7c72ad2a777cd2c7aba4f7ae235440835d6b29679b26d537d2cf80cc2fa26c15d4b3777314db3519bb7e2a87967342f28b88cd8d21340c681b814d88b0b557e550f79cff05142e45238235ac09d26867a7e14051c135c511221849b6c2034b79e628dfc529c19e776b5b455fc32afbcf36e92c109fcfa894f42b605b29eff301d7981b0d6a13c20e48d81fabb7a572f6ab4b2b7d5374a5cee1fb063d7a06cb6c67e6c96a4f6f3d9b92b1f57ca2d0f439942008b925d38f86ed7d81b9ede72a307317db00abaf28cc406744177f5070f3a1961573a7339517b50db7ce85cf1e60374081aec2ad26e2c417fa1681311f440bd8a547d69f8ac2b83395010d7d383c1b39a36efadc93d45e2153f3781575281c17924cea7f913ccb77553bc2b4c4139b2ee070b0248bbb49d7ffac16ffaee6d1f920bdef5bc1673f2dc1ca1c6f27dd2bb98f85e91ced2e13c32d13a5965cfa9ae696b68183b28d9a4c06088975978b0bb8210f61fe553f0eae90decab6fb7d8c93007b92e2d3ad8707493498bf2fafcaf8bc37262ae2a29b6a69137722e45d908bcb63156f3058cd59cdd068e33842117428bc19e0938d4e9d9e528cabb854ac47e4923e8916e18d0462d341e59a2e5ac49a796afb428dd98ad5068ab31651481d4ff93aa15e4c23f9620fb2644d512653abd84864510608f89f2f64cb642366b246b6987f850f93ed45fb3197d560623f68748c0c5363edc7d78db73ecd32177db9cb7387092c32f8403ab8fe3f6ca9d3bf8a4a6c5deba3087a96b2192481488545e16cb3a17b6e723273d3027c2848b5ce8e488f03cbcf854d24cc04be465aed6ea8238111db4effc5468d2a64e24899b0dac8d4d68b648c7c702ce9ce54e7f536fc7b9cdbb5c35b06a58a0b601cd0bfb1d501c6c4b6e642095fc6bd59bde8d7ecb3413c57523fdab037d0895e86c209b18db4856717b095374254f36d2909d4c5573dd6823050ea0210d5f01c088aff061d559021593f0ac0f371fd3e752c27f142798f7827573d46a5c001ac76d25a9678588d835e7d72884a1720d38a0c393683ce027bcf630fd9d1d56aad82c675511d3c7fe0ec92b1460eb9a440f4007f68f6d5031936449da0c62a169220f50674ce9aea415633a193753770e78da427aa8ada256048221ff4ab530191a88f398a2f63ee457860c87448edbc53aba17c8b93e71b710f51004e56d53939638038592ab5920026a13edefc0bd2d940a0e200217ceeb302ee4560d7e8fdcd87e6816b9273ba9a994aee65b292c8695f0cea2fdff054f24543f9271f8ab57468974de75942e9d96e3dedae594bba707519f1cca4c09aa5bf9a6d5d7e82535357f439f10a4cfb8e43d0cb5e19e58928b33135e2e570a3d428aabe5ff8311024fad59f125ac4ad72752e2fc9e91f5b2d1276a5dbcc5f93665db13e1cf3d656de92ec87c6aa9eb3ca2cf71e476694bb8ecf89e06b9c52805b9f6a1e49ca0620c524522a4c1e546cd4400932cc0a8ac180af1d863257647bfbbb0d9d7bed6cc847bf0ee117ef6a83ee427c7dacc5133ce586a004f784df7e5e2075b29c39ad65d9c2fb8268cce9fd083de8a86bcbc9a8564bd1e4c4d6ce6ebc94459d9562a22b06f4d9e998a80063426a892b9fd6d6f11e560bf36d925faee1bb8ce2a2e9a4fd9fbc7c86ca58b7768968f9363fce64d63339606eb54bf749603f09e2fb080a2f291f9e79333ef33c120ec653ffb9c8a88b57b75e1d594c77b37fe9ed92315c41d55f0008ba9d64085cbd239c10cb797afc6ae14ea4e5901ef73de82c65c197e4affe053a0a4f772dc098723e1783dbf007752b1d3765956e00639dbd536c9d6a872185182968adc19951b356ce743f258c0159b2237f5fb7c035393a7ddf8f2eafd00a7c468442ad94097f3afa317521052f3c9ff16f713cf3ce57ee1b438dcc848e2977de9f02def2a4882048b5fb534bd7bc3f99049cf3186952927bf37b2a5e63038c40891bf3e0768631f9a88e638098b7c5cf4866b351b3f5e98ef8774a216081dcec7c172a30541a45326cc3d6dd8f77123544e75449758b8fc91571afae7279423b871df73420b58e54baaab9fd68c8128156e8b93ddf13ab40e0d14aee3a694b7abd9a22462e97b325f82a73896df8cc12924c12a1fc5b315e6283ce4364c8a758442822f6d48f8a7ad14200e8cdde447888654a269eb7fefcc757be497339dfcd7dcd56c94ecab75bd12b73609a2d340d77fe4de2620336f5a1d023228386d64a3f92db232fe3a0249db7e50b953b541151acc265e6117ad1eacd3bbf3c22c8d6b232d4607500b63d52ac78364874c93df11d204480d2d864e21755aee929553d812d6f7502fc8a33db8d7d7980fcaa1ce2f36a8d45b29e</script>  <div class="hbe hbe-content">    <div class="hbe hbe-input hbe-input-default">      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>      </label>    </div>  </div></div><script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 日常 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hexo随手记</title>
+      <link href="/2020/10/16/hexo%E9%9A%8F%E6%89%8B%E8%AE%B0/"/>
+      <url>/2020/10/16/hexo%E9%9A%8F%E6%89%8B%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="为hexo-添加顶置"><a href="#为hexo-添加顶置" class="headerlink" title="为hexo 添加顶置"></a>为hexo 添加顶置</h1><ol><li>安装</li></ol><figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br></pre></td></tr></tbody></table></figure><ol start="2"><li>添加top</li></ol><p>然后 在文章的front-matter 里添加 <strong>top: true</strong> 即可</p><ol start="3"><li>修改/添加标签</li></ol><p>给顶置的文件前头添加顶置<font color="blue">两个</font>字标志(当然你也可以随便改)</p><p>位置:　<font color="red">/themes/next/layout/_macro/post.swig  </font></p><span id="more"></span><figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">{% <span class="keyword">if</span> post.top %}</span><br><span class="line">    &lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">"fa fa-thumb-tack"</span>&gt;&lt;/i&gt;</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">font</span> <span class="attr">color</span>=<span class="string">green</span>&gt;</span>置顶<span class="tag">&lt;/<span class="name">font</span>&gt;</span></span></span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"post-meta-divider"</span>&gt;</span>|<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span></span><br><span class="line">{% endif %}</span><br></pre></td></tr></tbody></table></figure><h1 id="CMAME-推送消失问题"><a href="#CMAME-推送消失问题" class="headerlink" title="CMAME 推送消失问题"></a>CMAME 推送消失问题</h1><p>请在<font color="red">source</font> 里添加个CMAME  这样就可以更新你的库里了</p><p>​    </p><h1 id="为github图床提供加速"><a href="#为github图床提供加速" class="headerlink" title="为github图床提供加速"></a>为github图床提供加速</h1><ol><li><p>使用工具picgo+jsDelivr</p></li><li><p>在github 上新建一个仓库,公开</p></li><li><p>然后获取token<font color="red"> 那串数字只出现一次,记得保存.忘了得重新删除在创建</font></p><p><img src="https://cdn.jsdelivr.net/gh/ducute/Code/img/image-20201018221338469.png"></p></li></ol><p><img src="https://cdn.jsdelivr.net/gh/ducute/Code/img/image-20201018221430701.png"></p><p><img src="https://cdn.jsdelivr.net/gh/ducute/Code/img/image-20201018221545071.png"></p><ol start="4"><li>下载picgo</li></ol><p>地址:<a href="https://github.com/Molunerfinn/PicGo/releases">https://github.com/Molunerfinn/PicGo/releases</a></p><ol start="5"><li>配置picgo</li></ol><p><img src="https://cdn.jsdelivr.net/gh/ducute/Code/img/du_1603030920.png"></p><p><a href="https://cdn.jsdelivr.net/gh/(%E4%BD%A0%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D)/(%E4%BD%A0%E7%9A%84%E4%BB%93%E5%BA%93%E5%90%8D)@%E5%8F%91%E5%B8%83%E7%89%88%E6%9C%AC%E5%8F%B7">https://cdn.jsdelivr.net/gh/(你的用户名)/(你的仓库名)@发布版本号</a>(可有可无  无就是最新)/(你的文件)</p><h1 id="文章分类的级别问题"><a href="#文章分类的级别问题" class="headerlink" title="文章分类的级别问题"></a>文章分类的级别问题</h1><p>categories:</p><pre><code>- 第一级- 第二级</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随手记 </category>
+          
+          <category> hexo </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> hexo </tag>
+            
+            <tag> 随手记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
