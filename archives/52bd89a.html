@@ -20,30 +20,38 @@
     var CONFIG = {"hostname":"ducute.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="因菜而学,因学而知菜">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ducute&#39;s blog">
-<meta property="og:url" content="https://ducute.github.io/page/2/index.html">
+  <meta name="description" content="序列的相似度  具有相识的序列就可能具有 相似的结构——&gt; 相似的功能  一致度&amp;nbsp;： （相同&#x2F;总数）* 100% 相识度 : [(相同+ 相似 ) &#x2F; 总数] * 100% 替换矩阵: DNA替换矩阵">
+<meta property="og:type" content="article">
+<meta property="og:title" content="多序列比对">
+<meta property="og:url" content="https://ducute.github.io/archives/52bd89a.html">
 <meta property="og:site_name" content="ducute&#39;s blog">
-<meta property="og:description" content="因菜而学,因学而知菜">
+<meta property="og:description" content="序列的相似度  具有相识的序列就可能具有 相似的结构——&gt; 相似的功能  一致度&amp;nbsp;： （相同&#x2F;总数）* 100% 相识度 : [(相同+ 相似 ) &#x2F; 总数] * 100% 替换矩阵: DNA替换矩阵">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201007101531728.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201007112334652.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201007111257092.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201007143012591.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201007143248956.png">
+<meta property="article:published_time" content="2021-10-24T08:53:41.056Z">
+<meta property="article:modified_time" content="2021-10-24T09:47:00.076Z">
 <meta property="article:author" content="ducute">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201007101531728.png">
 
-<link rel="canonical" href="https://ducute.github.io/page/2/">
+<link rel="canonical" href="https://ducute.github.io/archives/52bd89a.html">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : true,
-    isPost : false,
+    isHome : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>ducute's blog</title>
+  <title>多序列比对 | ducute's blog</title>
   
 
 
@@ -205,99 +213,10 @@
         <div class="content-wrap">
           
 
-          <div class="content index posts-expand">
+          <div class="content post posts-expand">
             
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ducute.github.io/archives/9a389489.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="ducute">
-      <meta itemprop="description" content="因菜而学,因学而知菜">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ducute's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/archives/9a389489.html" class="post-title-link" itemprop="url">有趣的小网站</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-10-24 16:53:41 / 修改时间：17:47:00" itemprop="dateCreated datePublished" datetime="2021-10-24T16:53:41+08:00">2021-10-24</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E9%9A%8F%E6%89%8B%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">随手记</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>35</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
 
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="git">git</h1>
-<ol type="1">
-<li><p><a target="_blank" rel="noopener" href="https://book.git-scm.com/">git网址</a></p></li>
-<li><p>推荐这个简易版的<a target="_blank" rel="noopener" href="https://www.bootcss.com/p/git-guide/">git_</a></p></li>
-</ol>
-<h1 id="学语言交流的">学语言(交流的)</h1>
-<ol type="1">
-<li>小玩具叭 <a target="_blank" rel="noopener" href="http://www.duolingo.cn/learn">多领国</a></li>
-</ol>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
@@ -313,10 +232,9 @@
       <meta itemprop="name" content="ducute's blog">
     </span>
       <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/archives/52bd89a.html" class="post-title-link" itemprop="url">多序列比对</a>
-        </h2>
+        <h1 class="post-title" itemprop="name headline">
+          多序列比对
+        </h1>
 
         <div class="post-meta">
             <span class="post-meta-item">
@@ -363,340 +281,146 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>序列的相似度</p>
+        <p>序列的相似度</p>
 <blockquote>
 <p>具有相识的序列就可能具有 相似的结构——&gt; 相似的功能</p>
 </blockquote>
 <p><font color="red">一致度&nbsp;</font>： （相同/总数）* 100%</p>
 <p><font color="red">相识度</font> : [(相同+ 相似 ) / 总数] * 100%</p>
 <h2 id="替换矩阵">替换矩阵:</h2>
-<h3 id="dna替换矩阵">DNA替换矩阵</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/archives/52bd89a.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
+<h3 id="dna替换矩阵">DNA替换矩阵<span id="more"></span></h3>
+<ol type="1">
+<li><p>等价矩阵：　相同为１　　不同为０</p></li>
+<li><p>转换－颠换矩阵：　一个环：　Ｃ／Ｔ　两个环：　A／Ｇ　相同为１　　不相同为－５　　　</p></li>
+<li><p>Blast矩阵：　字母相同为５　　不相同为－４　　　</p>
+<p>１.　＞为什么是５／－４　因为经验</p></li>
+</ol>
+<h3 id="蛋白质替换矩阵">蛋白质替换矩阵:</h3>
+<ol type="1">
+<li><p>等价矩阵</p>
+<blockquote>
+<p>一样 相同蛋白质为1 不同为0</p>
+</blockquote></li>
+<li><p>PAM矩阵</p>
+<blockquote>
+<p><font color="red">最常用</font> pam-1 是根据100个氨基酸突变平均发生<font color="bule">1个</font> 的量值</p>
+<p>及 相似度为99% 的用 pam-1 呈现负相关</p>
+</blockquote></li>
+<li><p>BLOSUM矩阵</p>
+<blockquote>
+<p><font color="red"> BLOSUM 62 最为常用</font></p>
+<p>跟 pam矩阵 反着过来 跟 相识度呈现正相关</p>
+</blockquote></li>
+</ol>
+<figure>
+<img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201007101531728.png" alt="image-20201007101531728"><figcaption aria-hidden="true">image-20201007101531728</figcaption>
+</figure>
+<h2 id="序列比较">序列比较</h2>
+<h3 id="打点比对">打点比对</h3>
+<ol type="1">
+<li><p>两条序列比对</p>
+<blockquote>
+<p>将一条序列横向排列 , 另一条纵向排列 &lt;也可以是相同的序列&gt;</p>
+<p>当 遇到<font color="red"> 相同时 记一个标记</font></p>
+</blockquote></li>
+<li><p>一些打点法网址: <a target="_blank" rel="noopener" href="http://myhits.isb-sib.ch/cgi-bin/dotlet">Dotlet</a></p>
+<p><a target="_blank" rel="noopener" href="http://arbl.cvmbs.colostate.edu/molkit/dnadot">Dnadot</a></p>
+<p><a target="_blank" rel="noopener" href="http://sonnhammer.sbc.su.se/Dotter.html">Dotter</a></p>
+<p><a target="_blank" rel="noopener" href="http://emboss.sourceforge.net">Dottup</a></p></li>
+</ol>
+<h3 id="序列比对法">序列比对法</h3>
+<ol type="1">
+<li>需要替换<a href="#替换矩阵">矩阵</a>+ 算法</li>
+</ol>
+<h4 id="全局比对算法">全局比对算法</h4>
+<p><span class="math display">\[
+\begin{cases}s(0,0) = 0   \\
+s(0,j) = gap * j  \\
+s(i,0) =  gap * i \\
+s_{max}(i,j)= \begin{cases}
+s(i-1,j-1)+w(i,j)\\
+s(i-1,j) +gap \\
+s(i,j-1) +gap 
+\end{cases}
+\end{cases}
+\]</span></p>
+<blockquote>
+<p>w( i,j) 是替换矩阵对应的值</p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201007112334652.png"></p>
+<blockquote>
+<p><font color="red"> 如果箭头☞的是字母 则对应所指方向的为空如果是斜着 就两个保持不变</font></p>
+</blockquote>
+<p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201007111257092.png"></p>
+<h4 id="局部比对算法">局部比对算法</h4>
+<p><span class="math display">\[
+s(0,0) = 0 \\
+s(0,j) = 0 \\\\\
+s(i,0) = 0\\\\\\
+s(i,j) = max\begin{cases}
+0\\
+s(i-1,j-1) + w(i,j)\\
+s(i-1,j) +gap\\
+s(i,j-1) +gap\\
+\end{cases}
+\]</span></p>
+<p><strong>局部比对要找最高分得指向零的那条线</strong></p>
+<hr>
+<p>比对的网址:</p>
+<p><a target="_blank" rel="noopener" href="http://www.ebi.ac.uk/Tools/psa">embl-ebl</a></p>
+<h2 id="blast搜索">BLAST搜索</h2>
+<p>作用: 主要就是在大量数据库里 搜索出<font color="red"> 相识的序列</font></p>
+<p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201007143012591.png"></p>
+<ol type="1">
+<li>blast 找出序列相同的子序列,他们的长度相同,且能形成无空位的序列</li>
+<li>psi-blast (迭代):上blast的基础上进行搜索</li>
+</ol>
+<p><img src="https://cdn.jsdelivr.net/gh/ducute/pic-use/img/image-20201007143248956.png"></p>
+<ol start="3" type="1">
+<li><p>phi-blast (模式识别模式)</p></li>
+<li><p>一些经行blast比对的在线网址:</p>
+<ol type="1">
+<li><a target="_blank" rel="noopener" href="http://www.ncbi.nlm.nih.gov/BLAST">USA-NCBI</a></li>
+<li><a target="_blank" rel="noopener" href="http://web.expasy.org/blast">Europe-ExPASY</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.uniprot.org/blast/">Europe-Uniprot</a></li>
+<li><a target="_blank" rel="noopener" href="http://blast.ddbj.nig.ac.jp">Japan-DDBJ</a></li>
+</ol></li>
+</ol>
+
     </div>
 
     
     
+    <div>
     
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+            ------------- 本文结束 <i class="fa fa-heart-o"></i> 感谢您的阅读-------------
+    	</div>
+    
+</div
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ducute.github.io/archives/13b7271c.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="ducute">
-      <meta itemprop="description" content="因菜而学,因学而知菜">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ducute's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/archives/13b7271c.html" class="post-title-link" itemprop="url">计算方法预测三级结构</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-10-24 16:53:41 / 修改时间：17:47:00" itemprop="dateCreated datePublished" datetime="2021-10-24T16:53:41+08:00">2021-10-24</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">生物信息学</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>776</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="what">WHAT ?</h1>
-<p>是利用电脑进行三级结构的预测</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/archives/13b7271c.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
-    </div>
 
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ducute.github.io/archives/2fcefa41.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="ducute">
-      <meta itemprop="description" content="因菜而学,因学而知菜">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ducute's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/archives/2fcefa41.html" class="post-title-link" itemprop="url">名词语法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-10-24 16:53:41 / 修改时间：17:47:00" itemprop="dateCreated datePublished" datetime="2021-10-24T16:53:41+08:00">2021-10-24</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E8%8B%B1%E8%AF%AD%E8%AF%AD%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">英语语法</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="名词的语法">名词的语法</h1>
-<h2 id="分类">分类</h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/archives/2fcefa41.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
         
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/archives/13b7271c.html" rel="prev" title="计算方法预测三级结构">
+      <i class="fa fa-chevron-left"></i> 计算方法预测三级结构
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/archives/9a389489.html" rel="next" title="有趣的小网站">
+      有趣的小网站 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
+    
   </article>
   
   
   
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://ducute.github.io/archives/a9e70316.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/touxiang.png">
-      <meta itemprop="name" content="ducute">
-      <meta itemprop="description" content="因菜而学,因学而知菜">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="ducute's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/archives/a9e70316.html" class="post-title-link" itemprop="url">蛋白质相关操作</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2021-10-24 16:53:41 / 修改时间：17:47:00" itemprop="dateCreated datePublished" datetime="2021-10-24T16:53:41+08:00">2021-10-24</time>
-            </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%94%9F%E7%89%A9%E4%BF%A1%E6%81%AF%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">生物信息学</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>504</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="蛋白质二级结构">蛋白质二级结构</h1>
-<h2 id="先看懂"><font color="YELLOW">先看懂</font>:　</h2>
-<p>​ <strong>结构对应图</strong></p>
-<table>
-<thead>
-<tr class="header">
-<th>T</th>
-<th style="text-align: center;">E</th>
-<th>G</th>
-<th style="text-align: center;">empty</th>
-<th style="text-align: center;">H</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>turn</td>
-<td style="text-align: center;">beta strand</td>
-<td>3/10- hellx</td>
-<td style="text-align: center;">ono secondary structure</td>
-<td style="text-align: center;">alpha hexllx</td>
-</tr>
-<tr class="even">
-<td>β转角</td>
-<td style="text-align: center;">β折片</td>
-<td>螺旋结构</td>
-<td style="text-align: center;">没有结构</td>
-<td style="text-align: center;">α螺旋</td>
-</tr>
-</tbody>
-</table>
-<h2 id="知道怎么做"><font color="blue">知道怎么做</font></h2>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/archives/a9e70316.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
 
 
 
@@ -748,6 +472,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%BF%E6%8D%A2%E7%9F%A9%E9%98%B5"><span class="nav-number">1.</span> <span class="nav-text">替换矩阵:</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dna%E6%9B%BF%E6%8D%A2%E7%9F%A9%E9%98%B5"><span class="nav-number">1.1.</span> <span class="nav-text">DNA替换矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%9B%8B%E7%99%BD%E8%B4%A8%E6%9B%BF%E6%8D%A2%E7%9F%A9%E9%98%B5"><span class="nav-number">1.2.</span> <span class="nav-text">蛋白质替换矩阵:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E6%AF%94%E8%BE%83"><span class="nav-number">2.</span> <span class="nav-text">序列比较</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E7%82%B9%E6%AF%94%E5%AF%B9"><span class="nav-number">2.1.</span> <span class="nav-text">打点比对</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%8F%E5%88%97%E6%AF%94%E5%AF%B9%E6%B3%95"><span class="nav-number">2.2.</span> <span class="nav-text">序列比对法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%A8%E5%B1%80%E6%AF%94%E5%AF%B9%E7%AE%97%E6%B3%95"><span class="nav-number">2.2.1.</span> <span class="nav-text">全局比对算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E6%AF%94%E5%AF%B9%E7%AE%97%E6%B3%95"><span class="nav-number">2.2.2.</span> <span class="nav-text">局部比对算法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#blast%E6%90%9C%E7%B4%A2"><span class="nav-number">3.</span> <span class="nav-text">BLAST搜索</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

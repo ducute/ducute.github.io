@@ -20,17 +20,22 @@
     var CONFIG = {"hostname":"ducute.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"./public/search.xml"};
   </script>
 
-  <meta name="description" content="因菜而学,因学而知菜">
-<meta property="og:type" content="website">
-<meta property="og:title" content="ducute&#39;s blog">
-<meta property="og:url" content="https://ducute.github.io/archives/2020/10/index.html">
+  <meta name="description" content="用LxRunOffline迁移WSL github项目地址 1list  # 查看Linux name 1LxRunOffline move -n &lt;linux name&gt; -d &lt;位置&gt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WSL相关">
+<meta property="og:url" content="https://ducute.github.io/archives/66dc1404.html">
 <meta property="og:site_name" content="ducute&#39;s blog">
-<meta property="og:description" content="因菜而学,因学而知菜">
+<meta property="og:description" content="用LxRunOffline迁移WSL github项目地址 1list  # 查看Linux name 1LxRunOffline move -n &lt;linux name&gt; -d &lt;位置&gt;">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="e:/Data/blog/source_posts/wsl-一些操作.assets/mdu_1636354991.jpg">
+<meta property="article:published_time" content="2021-11-08T06:39:19.000Z">
+<meta property="article:modified_time" content="2021-11-08T07:25:23.151Z">
 <meta property="article:author" content="ducute">
+<meta property="article:tag" content="-WSL -">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="e:/Data/blog/source_posts/wsl-一些操作.assets/mdu_1636354991.jpg">
 
-<link rel="canonical" href="https://ducute.github.io/archives/2020/10/">
+<link rel="canonical" href="https://ducute.github.io/archives/66dc1404.html">
 
 
 <script id="page-configurations">
@@ -38,12 +43,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | ducute's blog</title>
+  <title>WSL相关 | ducute's blog</title>
   
 
 
@@ -205,50 +210,123 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 12 篇日志。 继续努力。</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://ducute.github.io/archives/66dc1404.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/touxiang.png">
+      <meta itemprop="name" content="ducute">
+      <meta itemprop="description" content="因菜而学,因学而知菜">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="ducute's blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          WSL相关
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-11-08 14:39:19 / 修改时间：15:25:23" itemprop="dateCreated datePublished" datetime="2021-11-08T14:39:19+08:00">2021-11-08</time>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>199</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2020</span>
+        <h3 id="用lxrunoffline迁移wsl">用LxRunOffline迁移WSL</h3>
+<p><a target="_blank" rel="noopener" href="https://github.com/DDoSolitary/LxRunOffline">github项目地址</a></p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list  # 查看Linux name</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LxRunOffline move -n &lt;linux name&gt; -d &lt;位置&gt;</span><br></pre></td></tr></tbody></table></figure>
+<span id="more"></span>
+<h2 id="wsl2-代理问题">WSL2 代理问题</h2>
+<p>如果安装网上说的不行的话请设置下这些位置试试:</p>
+<figure>
+<img src="E:\Data\blog\source_posts\wsl-一些操作.assets\mdu_1636354991.jpg" alt="mdu_1636354991"><figcaption aria-hidden="true">mdu_1636354991</figcaption>
+</figure>
+<p>就 wv2ray 专用和公用都打勾</p>
+<h2 id="wsl的一些命令">WSL的一些命令</h2>
+<ul>
+<li>卸载Linux</li>
+</ul>
+<blockquote>
+<p>wslconfig /u <name></name></p>
+</blockquote>
+<ul>
+<li>关闭Linux</li>
+</ul>
+<blockquote>
+<p>wsl --shutdown <name></name></p>
+</blockquote>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+    
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+            ------------- 本文结束 <i class="fa fa-heart-o"></i> 感谢您的阅读-------------
+    	</div>
+    
+</div
 
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-10-16T09:16:51+08:00"
-              content="2020-10-16">
-          10-16
-        </time>
-      </div>
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/WSL/" rel="tag"># -WSL -</a>
+          </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/archives/c35405c5.html" itemprop="url">
-            <span itemprop="name">hexo随手记</span>
-          </a>
-      </div>
+        
 
-    </header>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/archives/3d8d4db4.html" rel="prev" title="hyper虚拟器扩容">
+      <i class="fa fa-chevron-left"></i> hyper虚拟器扩容
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-
-
-    </div>
-  </div>
   
   
-  
-
   
 
 
@@ -301,6 +379,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8lxrunoffline%E8%BF%81%E7%A7%BBwsl"><span class="nav-number">1.</span> <span class="nav-text">用LxRunOffline迁移WSL</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wsl2-%E4%BB%A3%E7%90%86%E9%97%AE%E9%A2%98"><span class="nav-number"></span> <span class="nav-text">WSL2 代理问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wsl%E7%9A%84%E4%B8%80%E4%BA%9B%E5%91%BD%E4%BB%A4"><span class="nav-number"></span> <span class="nav-text">WSL的一些命令</span></a></div>
       </div>
       <!--/noindex-->
 
